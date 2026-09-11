@@ -1,11 +1,11 @@
 package com.micro.hotel.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,7 +15,8 @@ import lombok.Setter;
 @Table(name = "hotels")
 public class Hotel {
     @Id
-    private  String id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private  String name;
     private  String location;
     private  String about;

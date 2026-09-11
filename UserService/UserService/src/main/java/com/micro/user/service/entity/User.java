@@ -25,6 +25,6 @@ public class User {
 
     @Column(name="ABOUT")
     private String about;
-
+    @Transient
     private List<Rating> rating =new ArrayList<>();
 }

@@ -6,6 +6,7 @@ import com.micro.user.service.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +16,8 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo  userRepo;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Override
     public User save(User user) {
