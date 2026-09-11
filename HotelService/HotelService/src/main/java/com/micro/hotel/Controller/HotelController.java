@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/hotels")
@@ -25,7 +26,7 @@ public class HotelController {
 
     //get single
     @GetMapping("/{hotelId}")
-    public ResponseEntity<Hotel> createHotel(@PathVariable String hotelId) {
+    public ResponseEntity<Hotel> getHotel(@PathVariable UUID hotelId) {
         return ResponseEntity.status(HttpStatus.OK).body(hotelService.get(hotelId));
     }
 
