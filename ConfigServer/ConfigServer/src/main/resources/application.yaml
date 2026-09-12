@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+  config:
+    import: optional:configserver:http://localhost:8085
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sayan4064/microservice-config.git
